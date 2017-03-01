@@ -8,7 +8,7 @@ from numpy import random
 def rhyme_time(sonnets, rhyme_scheme):
     rhyme_map = {}
     for k in range(int(len(sonnets) / 14)):
-        sonnet = sonnets[14*k : 14*(k+1)]
+        sonnet = sonnets[14 * k : 14 * (k + 1)]
         for i in range(len(rhyme_scheme)):
             word = sonnet[i][-1]
             rhyme = sonnet[rhyme_scheme[i]][-1]
@@ -26,7 +26,7 @@ def rhyme_time(sonnets, rhyme_scheme):
 def ending_words(sonnets):
     weights = {}
     for k in range(int(len(sonnets) / 14)):
-        sonnet = sonnets[14*k : 14*(k+1)]
+        sonnet = sonnets[14*k : 14*(k + 1)]
         for i in range(14):
             last_word = sonnet[i][-1]
             if last_word in weights:
@@ -60,7 +60,7 @@ def generate_ending_rhymes(end_words, end_probs, rhyme_map):
 
 def unsupervised_learning(n_states, n_iters):
     '''
-    Trains an HMM using supervised learning on the file 'ron.txt' and
+    Trains an HMM using supervised learning on the file 'shakespeare.txt' and
     prints the results.
 
     Arguments:
@@ -86,7 +86,7 @@ def unsupervised_learning(n_states, n_iters):
     # Train the HMM.
     HMM = unsupervised_HMM(lines, n_states, n_iters)
     # print out most frequent words for each state
-    # HMM.print_frequent_words(number_map)
+    HMM.print_frequent_words(number_map)
     sonnet = []
     for i in range(14): 
         sonnet.append(HMM.generate_emission(10, final_end_words[i], number_map))
