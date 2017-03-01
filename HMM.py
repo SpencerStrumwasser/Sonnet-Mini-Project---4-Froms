@@ -1,9 +1,9 @@
 ########################################
 # CS/CNS/EE 155 2017
-# Problem Set 5
+# Miniproject 2
 #
-# Author:       Andrew Kang
-# Description:  Set 5 solutions
+# Author:       Richard Hu, Spencer Strumwasser, Lee Tang
+# Description:  Miniproject 2 Submission
 ########################################
 
 import random
